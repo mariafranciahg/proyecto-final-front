@@ -1,0 +1,30 @@
+/* ===== NAVBAR SERVICASA ===== */
+
+.navbar-servi {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  }
+  
+  .navbar-servi .brand-text {
+    color: #1D54B1;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .navbar-servi .nav-link-servi {
+    color: #1D54B1;
+    margin-left: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .navbar-servi .nav-link-servi:hover {
+    color: #103A7E; /* un azul más fuerte para el hover */
+  }
+  
+  .navbar-servi .logout {
+    cursor: pointer;
+  }
+  

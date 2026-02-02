@@ -1,0 +1,69 @@
+/* ============================
+   HEADER SERVICASA
+=============================== */
+
+.header-servi {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-color: #1D54B1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Imagen en el fondo */
+  .header-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4; 
+    top: 0;
+    left: 0;
+  }
+  
+  
+  .header-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1D54B1;
+    opacity: 0.65;
+  }
+  
+  /* Contenido centrado */
+  .header-content {
+    position: relative;
+    z-index: 10;
+    color: white;
+  }
+  
+  .header-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  
+  .header-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Botón principal */
+  .btn-servi {
+    background-color: #1D54B1;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); 
+  }
+  
+  .btn-servi:hover {
+    background-color: #e8e8e8;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35); 
+  }
+  
