@@ -1,61 +1,50 @@
 import { useState, useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import { ServicesContext } from "../context/ServicesContext";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { UserContext } from "../context/UserContext";
 
 function CreateService() {
-  const { addService } = useContext(UserContext);
+  const { addService } = useContext(ServicesContext);
+  const { userData } = useContext(UserContext);
+  
+  const [service, setService] = useState({
+    titulo: "",
+    descripcion: "",
+    precio: "",
+    foto: "",
+    categoria_id: "1",
+  });
 
-  const [titulo, setTitulo] = useState("");
-  const [precio, setPrecio] = useState("");
-  const [descripcion, setDescripcion] = useState("");
-  const [imagenUrl, setImagenUrl] = useState(""); 
-  const [categoria, setCategoria] = useState(""); 
-
-  const handleSubmit = (e) => {
-    const nuevoServicio = {
-      title: titulo,
-      price: precio,
-      description: descripcion,
-      image: imagenUrl,
-      category: categoria, 
-    };
-
-    addService(e, nuevoServicio);
-
-    // limpiar formulario
-    setTitulo("");
-    setPrecio("");
-    setDescripcion("");
-    setImagenUrl(""); 
-    setCategoria(""); 
+  const handleChange = (e) => {
+    setService({
+      ...service,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  return (
-    <div className="d-flex justify-content-center mt-5">
-      <Card className="p-4 shadow" style={{ width: "500px" }}>
-        <h3 className="text-center mb-4">Crear Publicación</h3>
+  if (userData === null) return <p className="text-center mt-5">Cargando...</p>;
 
-        <Form onSubmit={handleSubmit}>
+
+  if (!userData.id) {
+    return <p className="text-center mt-5">Debes iniciar sesión</p>;
+  }
+
+  return (
+    <div className="d-flex justify-content-center align-items-center py-5 bg-light">
+      <Card className="p-4 shadow" style={{ width: "450px" }}>
+        <h3 className="fw-bold text-center mb-4">Crear publicación</h3>
+
+        <Form onSubmit={(e) => addService(e, service)}>
           <Form.Group className="mb-3">
             <Form.Label>Título</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Título del servicio"
-              value={titulo}
-              onChange={(e) => setTitulo(e.target.value)}
-              required
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3">
-            <Form.Label>Precio</Form.Label>
-            <Form.Control
-              type="number"
-              placeholder="Precio"
-              value={precio}
-              onChange={(e) => setPrecio(e.target.value)}
+              name="titulo"
+              value={service.titulo}
+              onChange={handleChange}
+              placeholder="Ej: Limpieza profunda"
               required
             />
           </Form.Group>
@@ -64,44 +53,56 @@ function CreateService() {
             <Form.Label>Descripción</Form.Label>
             <Form.Control
               as="textarea"
-              rows={4}
-              placeholder="Descripción del servicio"
-              value={descripcion}
-              onChange={(e) => setDescripcion(e.target.value)}
+              rows={3}
+              name="descripcion"
+              value={service.descripcion}
+              onChange={handleChange}
+              placeholder="Describe tu servicio"
               required
             />
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>URL de Imagen</Form.Label>
+            <Form.Label>Precio</Form.Label>
             <Form.Control
-              type="url"
-              placeholder="https://ejemplo.com/imagen.jpg"
-              value={imagenUrl}
-              onChange={(e) => setImagenUrl(e.target.value)}
+              type="number"
+              name="precio"
+              value={service.precio}
+              onChange={handleChange}
+              placeholder="Ej: 25000"
+              required
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label>URL de imagen</Form.Label>
+            <Form.Control
+              type="text"
+              name="foto"
+              value={service.foto}
+              onChange={handleChange}
+              placeholder="Opcional"
             />
           </Form.Group>
 
           <Form.Group className="mb-3">
             <Form.Label>Categoría</Form.Label>
-            <Form.Control
-              as="select"
-              value={categoria}
-              onChange={(e) => setCategoria(e.target.value)}
-              required
+            <Form.Select
+              name="categoria_id"
+              value={service.categoria_id}
+              onChange={handleChange}
             >
-              <option value="">Selecciona una categoría</option>
-              <option value="1">Limpieza</option>
-              <option value="2">Gasfitería</option>
-              <option value="3">Herrería</option>
-              <option value="4">Electricidad</option>
+              <option value="1">Electricidad</option>
+              <option value="2">Limpieza</option>
+              <option value="3">Gasfitería</option>
+              <option value="4">Herrería</option>
               <option value="5">Carpintería</option>
               <option value="6">Pintura</option>
-            </Form.Control>
+            </Form.Select>
           </Form.Group>
 
-          <Button variant="success" type="submit" className="w-100">
-            Publicar
+          <Button type="submit" variant="primary" className="w-100 mt-2">
+            Publicar servicio
           </Button>
         </Form>
       </Card>

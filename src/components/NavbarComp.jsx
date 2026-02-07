@@ -40,11 +40,14 @@ const NavbarComp = () => {
                 <NavLink to="/profile" className="nav-link-servi">
                   Perfil
                 </NavLink>
-                <NavLink to="/" className="nav-link-servi">
+                <NavLink to="/solicitudes" className="nav-link-servi">
                   Mis Solicitudes
                 </NavLink>
                 <NavLink to="/create-service" className="nav-link-servi">
                   Crear Publicacion
+                </NavLink>
+                <NavLink to="/" className="nav-link-servi" onClick={logout}>
+                  Cerrar Sesión
                 </NavLink>
               </>
             )}

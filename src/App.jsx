@@ -1,4 +1,3 @@
-
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 
@@ -10,14 +9,17 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./components/Profile";
 import CreateService from "./pages/CreateService";
+import Service from "./pages/Service";
+import Solicitudes from "./pages/Solicitudes";
 
 import "./App.css";
 /*
 import NotFound from "./components/NotFound";
-import Service from "./pages/Service";
+
 */
 
 import { UserContext } from "./context/UserContext";
+
 
 function App() {
   
@@ -48,6 +50,11 @@ function App() {
               path="/create-service"
               element={token ? <CreateService /> : <Navigate to="/login" />}
             />
+             <Route path="/service/:id" element={<Service />} />
+             <Route
+              path="/solicitudes"
+              element={token ? <Solicitudes /> : <Navigate to="/login" />}
+            />
         </Routes>
       </div>
     <Footer />
@@ -57,7 +64,7 @@ function App() {
 /* 
       
       
-        <Route path="/service/:id" element={<Service />} />
+       
 
         <Route path="*" element={<NotFound />} />
   */

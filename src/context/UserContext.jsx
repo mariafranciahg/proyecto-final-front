@@ -7,7 +7,7 @@ export const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState(null);
   const [email, setEmail] = useState(""); 
   const [pass, setPass] = useState("");  
   const navigate = useNavigate();
@@ -104,46 +104,8 @@ const UserProvider = ({ children }) => {
     }
   };
 
-  const addService = async (e, service) => {
-    e.preventDefault(); 
-  
-    try {
-      const tokenStorage = localStorage.getItem("token");
-      if (!tokenStorage) return alert("Debes iniciar sesión");
-  
-      // Mapeamos los campos al backend
-      const servicioBackend = {
-        titulo: service.title,
-        precio: service.price,
-        descripcion: service.description,
-        foto: service.image,
-        usuario_id: userData.id,           
-        categoria_id: service.category,    
-      };
-  
-      const res = await fetch("http://localhost:3000/services", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${tokenStorage}`,
-        },
-        body: JSON.stringify(servicioBackend),
-      });
-  
-      if (!res.ok) {
-        const err = await res.json();
-        return alert(err.error || "Error creando el servicio");
-      }
-  
-      await res.json();
-      alert("Servicio creado con éxito");
-  
-    } catch (err) {
-      console.error(err);
-      alert("Error conectando con el servidor");
-    }
-  };
-  
+ 
+
   
   const logout = () => {
     setToken("");
@@ -153,6 +115,8 @@ const UserProvider = ({ children }) => {
     localStorage.removeItem("token");
     navigate("/login");
   };
+
+
 
   return (
     <UserContext.Provider
@@ -166,8 +130,7 @@ const UserProvider = ({ children }) => {
         getProfile,
         register,
         login,
-        logout,
-        addService,
+        logout
       }}
     >
       {children}

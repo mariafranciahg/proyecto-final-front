@@ -26,27 +26,27 @@ const Home = () => {
 
         <Row className="g-4 ">
           <Col xs={12} md={4}>
-            <CardCategory title="Gasfitería" icon={gasfiteriaIcon} />
+            <CardCategory id={3} title="Gasfitería" icon={gasfiteriaIcon} />
           </Col>
 
           <Col xs={12} md={4}>
-            <CardCategory title="Pintura" icon={pinturaIcon} />
+            <CardCategory id={6} title="Pintura" icon={pinturaIcon} />
           </Col>
 
           <Col xs={12} md={4}>
-            <CardCategory title="Herrería" icon={herreriaIcon} />
+            <CardCategory id={4} title="Herrería" icon={herreriaIcon} />
           </Col>
 
           <Col xs={12} md={4}>
-            <CardCategory title="Electricidad" icon={electricidadIcon} />
+            <CardCategory id={1}  title="Electricidad" icon={electricidadIcon} />
           </Col>
 
           <Col xs={12} md={4}>
-            <CardCategory title="Limpieza" icon={limpiezaIcon} />
+            <CardCategory id={2} title="Limpieza" icon={limpiezaIcon} />
           </Col>
 
           <Col xs={12} md={4}>
-            <CardCategory title="Carpintería" icon={carpinteriaIcon} />
+            <CardCategory id={5} title="Carpintería" icon={carpinteriaIcon} />
           </Col>
         </Row>
         </Container>

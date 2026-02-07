@@ -6,7 +6,9 @@ import { UserContext } from "../context/UserContext";
 function Profile() {
   const { userData, logout } = useContext(UserContext);
 
-  if (!userData.nombre) return <p className="text-center mt-5">Cargando...</p>;
+  if (!userData || !userData.nombre) {
+    return <p className="text-center mt-5">Cargando...</p>;
+  }
 
   return (
     <div className="d-flex justify-content-center align-items-center py-5">

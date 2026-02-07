@@ -1,19 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
 import Card from "react-bootstrap/Card";
 
-const CardCategory = ({ title, icon }) => {
+const CardCategory = ({ id, title, icon }) => {
   const navigate = useNavigate();
 
-  // Convertir el title a formato compatible con tu data
-  const normalizeCategory = (text) =>
-    text
-      .toLowerCase()
-      .normalize("NFD")               // separa acentos
-      .replace(/[\u0300-\u036f]/g, "") // elimina acentos
-      .replace(/\s+/g, "");            // elimina espacios si los hubiera
-
   const handleClick = () => {
-    navigate(`/gallery?category=${normalizeCategory(title)}`);
+    navigate(`/gallery?category=${id}`);
   };
 
   return (
@@ -35,3 +27,4 @@ const CardCategory = ({ title, icon }) => {
 };
 
 export default CardCategory;
+
