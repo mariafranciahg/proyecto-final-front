@@ -60,30 +60,31 @@ const Solicitudes = () => {
   };
 
   return (
-    <Container className="py-5">
+    <Container className="py-5 txt-secondary">
       <h2 className="fw-bold text-center mb-4">Mis solicitudes</h2>
 
-      <Tabs defaultActiveKey="mias" className="mb-3">
+      <Tabs defaultActiveKey="mias" className="mb-3 tabs-servi">
 
         {/* TAB 1: SOLICITUDES CREADAS */}
+        
         <Tab eventKey="mias" title="Creadas por mí">
           <Row>
             {misSolicitudes.length === 0 && (
-              <Card className="p-3 shadow-sm mb-3">
-                <p className="text-center text-muted mb-0">No has creado solicitudes.</p>
+              <Card className="p-3 shadow-sm mb-3 ">
+                <p className="text-center text-muted mb-0 txt-secondary">No has creado solicitudes.</p>
               </Card>
             )}
 
             {misSolicitudes.map((s) => (
               <Col md={6} className="mb-3" key={s.id}>
-                <Card className="p-3 shadow-sm">
+                <Card className="p-3 shadow-sm txt-secondary">
                   <h5 className="fw-bold">{s.servicio_titulo}</h5>
                   <p className="text-muted">{s.mensaje}</p>
                   <p><strong>Estado:</strong> {s.estado}</p>
                   <p><strong>Fecha:</strong> {new Date(s.fecha_creacion).toLocaleString()}</p>
 
                   <Button
-                    variant="danger"
+                    className="btn-servi-secondary w-50"
                     size="sm"
                     onClick={() => cancelarSolicitud(s.id)}
                   >
@@ -106,7 +107,7 @@ const Solicitudes = () => {
 
             {recibidas.map((s) => (
               <Col md={6} className="mb-3" key={s.id}>
-                <Card className="p-3 shadow-sm">
+                <Card className="p-3 shadow-sm txt-secondary">
                   <h5 className="fw-bold">{s.servicio_titulo}</h5>
                   <p><strong>Solicitante:</strong> {s.solicitante}</p>
                   <p className="text-muted">{s.mensaje}</p>
@@ -115,7 +116,7 @@ const Solicitudes = () => {
 
                   <div className="d-flex gap-2 mt-2">
                     <Button
-                      variant="success"
+                      className="btn-servi"
                       size="sm"
                       onClick={() => cambiarEstado(s.id, "Aceptada")}
                     >
@@ -123,7 +124,7 @@ const Solicitudes = () => {
                     </Button>
 
                     <Button
-                      variant="secondary"
+                      className="btn-servi-secondary"
                       size="sm"
                       onClick={() => cambiarEstado(s.id, "Rechazada")}
                     >

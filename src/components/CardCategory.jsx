@@ -10,7 +10,7 @@ const CardCategory = ({ id, title, icon }) => {
 
   return (
     <Card
-      className="shadow-sm border-0 text-center service-card text-secondary"
+      className="shadow-sm border-0 text-center service-card txt-secondary"
       onClick={handleClick}
       style={{ cursor: "pointer" }}
     >

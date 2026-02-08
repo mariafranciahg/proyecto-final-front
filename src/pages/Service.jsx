@@ -63,7 +63,7 @@ const Service = () => {
               </Col>
 
               <Col md={7}>
-                <Card.Body>
+                <Card.Body className="txt-secondary">
                   <Card.Title className="fw-bold fs-3 text-capitalize">
                     {servicioActual.titulo}
                   </Card.Title>
@@ -82,7 +82,7 @@ const Service = () => {
 
                   <Button
                     variant="primary"
-                    className="mt-2 w-100"
+                    className="mt-2 w-100 btn-servi"
                     onClick={handleCrearSolicitud}
                   >
                     Crear solicitud

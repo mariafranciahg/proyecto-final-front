@@ -12,17 +12,18 @@ import electricidadIcon from "../assets/img/electricidad.png";
 import limpiezaIcon from "../assets/img/limpieza.png";
 import carpinteriaIcon from "../assets/img/carpinteria.png";
 
+
 const Home = () => {
   return (
-    <div className="services-background">
+    <div >
     
   
       <Header />
 
      
-      <Container className="py-5">
+      <Container className="py-5 txt-secondary">
       
-        <h2 className="text-center fw-bold mb-4 text-secondary">Nuestros Servicios</h2>
+        <h2 className="text-center mb-4 fw-bold ">Nuestros Servicios</h2>
 
         <Row className="g-4 ">
           <Col xs={12} md={4}>

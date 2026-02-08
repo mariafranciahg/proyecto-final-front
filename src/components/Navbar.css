@@ -6,7 +6,7 @@
   }
   
   .navbar-servi .brand-text {
-    color: #1D54B1;
+    color: #134D9F;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -14,14 +14,15 @@
   }
   
   .navbar-servi .nav-link-servi {
-    color: #1D54B1;
+    color: #134D9F;
     margin-left: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   }
   
   .navbar-servi .nav-link-servi:hover {
-    color: #103A7E; /* un azul más fuerte para el hover */
+    color: #2963e2
   }
   
   .navbar-servi .logout {

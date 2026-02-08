@@ -38,7 +38,7 @@ const Gallery = () => {
     <div className="container py-4">
 
       {/* TÍTULO */}
-      <h2 className="fw-bold text-primary mb-4">
+      <h2 className="fw-bold mb-4">
         {category ? `Servicios de ${categoryName}` : "Todos los Servicios"}
       </h2>
 

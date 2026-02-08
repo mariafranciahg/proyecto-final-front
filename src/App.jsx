@@ -29,7 +29,7 @@ function App() {
     <div className="layout">
       <NavbarComp />
 
-      <div className="content">
+      <div className="content servi-background txt-secondary">
         <Routes>
             <Route path="/" element={<Home />} />
 

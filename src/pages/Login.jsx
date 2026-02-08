@@ -14,10 +14,11 @@ function Login() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center bg-light vh-100">
+    
+    <div className="d-flex justify-content-center align-items-center py-5 my-5 ">
       <Card
-        className="shadow p-5"
-        style={{ width: "440px", height: "390px", borderRadius: "12px" }}
+        className="shadow p-5 txt-secondary"
+        style={{ width: "400px", height: "350px", borderRadius: "12px" }}
       >
         <h3 className="text-center mb-4 fw-bold">Iniciar Sesión</h3>
 
@@ -47,7 +48,7 @@ function Login() {
             />
           </Form.Group>
 
-          <Button variant="primary" type="submit" className="w-100 mt-2">
+          <Button variant="primary" type="submit" className="w-100 mt-2 btn-servi ">
             Entrar
           </Button>
         </Form>

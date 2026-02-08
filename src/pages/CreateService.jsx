@@ -32,8 +32,8 @@ function CreateService() {
   }
 
   return (
-    <div className="d-flex justify-content-center align-items-center py-5 bg-light">
-      <Card className="p-4 shadow" style={{ width: "450px" }}>
+    <div className="d-flex justify-content-center align-items-center py-5">
+      <Card className="p-4 shadow txt-secondary" style={{ width: "450px" }}>
         <h3 className="fw-bold text-center mb-4">Crear publicación</h3>
 
         <Form onSubmit={(e) => addService(e, service)}>
@@ -101,7 +101,7 @@ function CreateService() {
             </Form.Select>
           </Form.Group>
 
-          <Button type="submit" variant="primary" className="w-100 mt-2">
+          <Button type="submit" variant="primary" className="w-100 mt-2 btn-servi ">
             Publicar servicio
           </Button>
         </Form>

@@ -21,8 +21,8 @@ function Register() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center py-5">
-      <Card className="p-4 shadow" style={{ width: "380px" }}>
+    <div className="d-flex justify-content-center align-items-center py-5" >
+      <Card className="p-4 shadow txt-secondary"  style={{ width: "380px" }}>
         <h3 className="text-center mb-3 fw-bold">Registro</h3>
         <Form onSubmit={(e) => register(e, form)}>
           <Form.Group className="mb-3">
@@ -61,7 +61,7 @@ function Register() {
             />
           </Form.Group>
 
-          <Button type="submit" className="w-100 mt-2" variant="primary">
+          <Button type="submit" className="w-100 mt-2 btn-servi " >
             Registrarme
           </Button>
         </Form>

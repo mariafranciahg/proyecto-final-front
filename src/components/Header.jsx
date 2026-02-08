@@ -11,7 +11,7 @@ const Header = () => {
         <h1>Bienvenido a ServiCasa</h1>
         <p>Soluciones para tu hogar a un click de distancia</p>
 
-        <NavLink to="/gallery" className="btn-servi">
+        <NavLink to="/gallery" className="btn-servi-header">
           Encuentra un profesional
         </NavLink>
       </div>

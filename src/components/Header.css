@@ -6,7 +6,7 @@
     position: relative;
     width: 100%;
     height: 380px;
-    background-color: #1D54B1;
+    background-color: #134D9F;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -29,8 +29,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1D54B1;
-    opacity: 0.65;
+    background-color: #19365e;
+    opacity: 0.5;
   }
   
   /* Contenido centrado */
@@ -38,6 +38,7 @@
     position: relative;
     z-index: 10;
     color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
   }
   
   .header-content h1 {
@@ -48,22 +49,23 @@
   .header-content p {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
-  }
-  
-  /* Botón principal */
-  .btn-servi {
-    background-color: #1D54B1;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
     font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); 
   }
   
-  .btn-servi:hover {
-    background-color: #e8e8e8;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35); 
+  .btn-servi-header {
+    background-color: #2963e2 !important;
+    color: white !important;
+    padding: 1rem 2rem !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    text-decoration: none!important;
+    transition: 0.3s ease !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.341) !important;
+  }
+  
+  .btn-servi-header:hover {
+    background-color: #e8e8e8 !important;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35)!important;
+    color: #134D9F !important;
   }
   

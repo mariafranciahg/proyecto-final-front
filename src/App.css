@@ -9,19 +9,57 @@
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   }
   
-  .services-background {
+  .servi-background {
     background-color: #f2f2f2;
+  
   }
-  .text-primary {
-    color: #1D54B1 !important;
-  }
-
-  .text-secondary {
-    color: #384361 !important;
+  .txt-primary {
+    color: #134D9F !important;
   }
 
-  /* El layout ocupa toda la pantalla */
-/* layout general */
+
+.txt-secondary {
+  color: #2b3958 !important;  
+  
+}
+
+ /* Botón principal */
+ .btn-servi {
+  background-color: #134D9F !important;
+  color: white !important;
+  padding: 0.7rem 1.5rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-decoration: none!important;
+  transition: 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-servi:hover {
+  background-color: #e8e8e8 !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35)!important;
+  color: #134D9F !important;
+}
+
+/*Boton secundario*/
+
+.btn-servi-secondary {
+  background-color: #C62828 !important;
+  color: white !important;
+  padding: 0.7rem 1.5rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-decoration: none!important;
+  transition: 0.3s ease !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-servi-secondary:hover {
+  background-color: #e8e8e8 !important;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35)!important;
+  color: #2b3958!important;
+}
+ 
 .layout {
     min-height: 100vh;
     display: flex;
@@ -35,3 +73,21 @@
     margin: 0;
   }
   
+
+  /* Estilo general de las pestañas */
+.tabs-servi .nav-link {
+  color: #2b3958 !important;   /* color de texto */
+  font-weight: 600 !important; /* negrita */
+}
+
+/* Hover */
+.tabs-servi .nav-link:hover {
+    color: #2963e2 !important;
+}
+
+/* Tab activa */
+.tabs-servi .nav-link.active {
+  color: #134D9F !important;
+  font-weight: 700 !important;
+  background-color: transparent !important;
+}

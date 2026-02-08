@@ -11,7 +11,7 @@ function Profile() {
   }
 
   return (
-    <div className="d-flex justify-content-center align-items-center py-5">
+    <div className="d-flex justify-content-center align-items-center py-5 my-5">
       <Card className="p-4 shadow" style={{ width: "380px" }}>
         <div className="text-center mb-3">
           {userData.foto && (
@@ -25,7 +25,7 @@ function Profile() {
           <h4 className="fw-bold">{userData.nombre}</h4>
           <p className="text-muted">{userData.email}</p>
         </div>
-        <Button className="w-100" variant="danger" onClick={logout}>
+        <Button className="w-100 btn-servi-secondary" variant="danger" onClick={logout}>
           Cerrar sesión
         </Button>
       </Card>
