@@ -14,8 +14,8 @@ const Solicitudes = () => {
   // Cargar solicitudes realizadas y recibidas
   const fetchSolicitudes = async () => {
     try {
-      const res1 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/solicitudes/realizadas`, { headers });
-      const res2 = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/solicitudes/recibidas`, { headers });
+      const res1 = await fetch(`${import.meta.env.VITE_API_URL}/solicitudes/realizadas`, { headers });
+      const res2 = await fetch(`${import.meta.env.VITE_API_URL}/solicitudes/recibidas`, { headers });
 
       setMisSolicitudes(await res1.json());
       setRecibidas(await res2.json());
@@ -31,7 +31,7 @@ const Solicitudes = () => {
   // Cancelar solicitud creada por el usuario
   const cancelarSolicitud = async (id) => {
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/solicitudes/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/solicitudes/${id}`, {
         method: "DELETE",
         headers,
       });
@@ -46,7 +46,7 @@ const Solicitudes = () => {
   // Cambiar estado (Aceptar / Rechazar)
   const cambiarEstado = async (id, estado) => {
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/solicitudes/estado/${id}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/solicitudes/estado/${id}`, {
         method: "PUT",
         headers,
         body: JSON.stringify({ estado }),

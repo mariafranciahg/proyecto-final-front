@@ -18,8 +18,8 @@ const ServicesProvider = ({ children }) => {
   const getServices = async (category = null) => {
     try {
       const url = category
-        ? `${process.env.NEXT_PUBLIC_API_URL}/services?category=${category}`
-        : `${process.env.NEXT_PUBLIC_API_URL}/services` ;
+        ? `${import.meta.env.VITE_API_URL}/services?category=${category}`
+        : `${import.meta.env.VITE_API_URL}/services` ;
 
       const resp = await fetch(url);
       const data = await resp.json();
@@ -34,7 +34,7 @@ const ServicesProvider = ({ children }) => {
   // -----------------------------
   const getCategories = async () => {
     try {
-      const resp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories`);
+      const resp = await fetch(`${import.meta.env.VITE_API_URL}/categories`);
       const data = await resp.json();
       setCategories(data);
     } catch (error) {
@@ -64,7 +64,7 @@ const ServicesProvider = ({ children }) => {
         usuario_id: userData.id,
       };
 
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/services`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/services`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(servicioBackend),
@@ -94,7 +94,7 @@ const ServicesProvider = ({ children }) => {
     }
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/solicitudes`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/solicitudes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

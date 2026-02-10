@@ -22,7 +22,7 @@ const UserProvider = ({ children }) => {
     if (!tokenStorage) return;
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/profile`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/profile`, {
         headers: { "Authorization": `Bearer ${tokenStorage}` },
       });
       const data = await res.json();
@@ -48,7 +48,7 @@ const UserProvider = ({ children }) => {
       };
       
 
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/register`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(nuevoUsuario),
@@ -72,7 +72,7 @@ const UserProvider = ({ children }) => {
     e.preventDefault(); 
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password: pass }),
@@ -88,7 +88,7 @@ const UserProvider = ({ children }) => {
         setToken(data.token);
         localStorage.setItem("token", data.token);
 
-        const perfilResp = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/profile`, {
+        const perfilResp = await fetch(`${import.meta.env.VITE_API_URL}/profile`, {
           headers: { "Authorization": `Bearer ${data.token}` },
         });
         const perfilData = await perfilResp.json();
