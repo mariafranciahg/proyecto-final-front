@@ -34,7 +34,10 @@ const Gallery = () => {
     }
   };
 
+  console.log("API_URL:", process.env.NEXT_PUBLIC_API_URL);
+
   return (
+    
     <div className="container py-4">
 
       {/* TÍTULO */}
@@ -77,6 +80,7 @@ const Gallery = () => {
       )}
     </div>
   );
+  
 };
 
 export default Gallery;
